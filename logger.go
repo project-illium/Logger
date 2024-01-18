@@ -17,6 +17,11 @@ type Logger struct {
 }
 
 var DisabledLogger = Logger{}
+var DefaultLogger = Logger{
+	Loggers: []*pterm.Logger{
+		pterm.DefaultLogger.WithLevel(pterm.LogLevelInfo),
+	},
+}
 
 // WithCustomLogger appends the logger to the list of loggers.
 // A log call propagates to all the stored loggers.
