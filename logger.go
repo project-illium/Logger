@@ -13,10 +13,10 @@ import (
 // locations such as the terminal and to file, using
 // different formats.
 type Logger struct {
-	Loggers    []*pterm.Logger
-	Level      pterm.LogLevel
-	ShowCaller bool
+	Loggers []*pterm.Logger
 }
+
+var DisabledLogger = Logger{}
 
 // WithCustomLogger appends the logger to the list of loggers.
 // A log call propagates to all the stored loggers.
